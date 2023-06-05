@@ -17,12 +17,11 @@ export class AppointmentListComponent implements OnInit {
   style: any = null;
   calendarDays: any[] = [];
 
-
   constructor(private calendarService: CalendarService) {}
 
   ngOnInit() {
     this.appointments = this.calendarService.getAppointments();
-    this.calendarDays = this.generateCalendarDays(); 
+    this.calendarDays = this.generateCalendarDays();
 
     this.appointments.sort((a, b) => {
       const dateA = new Date(a.date);
@@ -32,14 +31,14 @@ export class AppointmentListComponent implements OnInit {
   }
 
   getAppointmentsForDay(date: Date): any[] {
-    const dateString = date.toDateString(); 
+    const dateString = date.toDateString();
     return this.appointments.filter(
       (appointment) => appointment.date.toDateString() === dateString
     );
   }
 
   generateCalendarDays(): any[] {
-    const startDate = new Date(); 
+    const startDate = new Date();
     const daysInMonth = new Date(
       startDate.getFullYear(),
       startDate.getMonth() + 1,
@@ -86,26 +85,21 @@ export class AppointmentListComponent implements OnInit {
 
   onItemMoved(event: CdkDragDrop<any[]>, index: number) {
     if (event.previousContainer === event.container) {
-      
       const movedAppointment = this.appointments[index];
       this.appointments.splice(index, 1);
       this.appointments.splice(event.currentIndex, 0, movedAppointment);
     } else {
-      
       const movedAppointment = event.previousContainer.data[index];
       event.previousContainer.data.splice(index, 1);
       event.container.data.splice(event.currentIndex, 0, movedAppointment);
     }
   }
 
-  onDragStarted(event: CdkDragStart, index: number) {
-  }
+  onDragStarted(event: CdkDragStart, index: number) {}
 
-  onDragMove(event: CdkDragMove<any>) {
-  }
+  onDragMove(event: CdkDragMove<any>) {}
 
-  onDragEnded(event: CdkDragEnd, index: number) {
-  }
+  onDragEnded(event: CdkDragEnd, index: number) {}
 
   setStyle(event: MouseEvent) {
     const style = {

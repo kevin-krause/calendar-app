@@ -6,7 +6,8 @@
 
 ul {
   min-width: 100px;
-  /* width: 400px; */
+  width: 400px;
+  box-shadow: #888888;
 }
 
 li {
@@ -38,6 +39,8 @@ li {
 .appointment-title {
   margin: 0;
   font-weight: bold;
+  padding-left: 6px;
+  border-bottom: #c5c5c5 solid 1px;
 }
 
 .appointment-date {
@@ -46,10 +49,16 @@ li {
 
 .appointment-preview {
   background-color: #ddd;
-  padding: 5px;
+}
+
+.appointment-preview,
+.appointment-date,
+.appointment-list {
+  padding: 6px;
 }
 
 .btn-update,
 .btn-delete {
   margin-top: 5px;
+  border: #888888 1px;
 }
