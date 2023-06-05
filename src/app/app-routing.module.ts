@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { AppointmentFormComponent } from './components/appointment-form/appointment-form.component';
+import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/appointments', pathMatch: 'full' },
+  { path: 'appointments', component: AppointmentListComponent },
+  { path: 'add', component: AppointmentFormComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

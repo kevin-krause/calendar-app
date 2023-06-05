@@ -1,0 +1,37 @@
+/* appointment-form.component.css */
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 6px;
+}
+
+mat-input-container {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+mat-input-container input {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #4285f4;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3367d6;
+}

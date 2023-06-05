@@ -1,0 +1,52 @@
+/* app.component.css */
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+nav {
+  background-color: #4285f4;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+.app-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.appointment-form-container {
+  margin-bottom: 20px;
+}
+
+.appointment-list-container {
+  width: 100%;
+}
+
+.appointment-item {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.appointment-item h3 {
+  margin: 0;
+}
+
+.appointment-item p {
+  margin: 5px 0;
+}

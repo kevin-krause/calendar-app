@@ -1,0 +1,55 @@
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+}
+
+ul {
+  min-width: 100px;
+  /* width: 400px; */
+}
+
+li {
+  border-radius: 10px;
+}
+
+.calendar-day {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.calendar-day-heading {
+  margin: 0;
+  font-weight: bold;
+}
+
+.appointment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appointment-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.appointment-title {
+  margin: 0;
+  font-weight: bold;
+}
+
+.appointment-date {
+  margin: 0;
+}
+
+.appointment-preview {
+  background-color: #ddd;
+  padding: 5px;
+}
+
+.btn-update,
+.btn-delete {
+  margin-top: 5px;
+}

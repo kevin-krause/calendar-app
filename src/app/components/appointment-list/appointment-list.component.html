@@ -1,0 +1,39 @@
+<ul class="appointment-list" cdkDropList (cdkDropListDropped)="drop($event)">
+  <li
+    class="appointment-item"
+    *ngFor="let appointment of appointments; let i = index"
+    cdkDrag
+    [cdkDragData]="appointment"
+    (cdkDragStarted)="onDragStarted($event, i)"
+    (cdkDragMoved)="onDragMove($event)"
+    (cdkDragEnded)="onDragEnded($event, i)"
+    (mousedown)="setStyle($event)"
+  >
+    <h3 class="appointment-title">{{ appointment.title }}</h3>
+    <p class="appointment-date">{{ appointment.date }}</p>
+    <div *cdkDragPreview class="appointment-preview" [ngStyle]="style">
+      {{ appointment.title }}
+      {{ appointment.date }}
+    </div>
+    <button class="btn-update" (click)="openUpdateDialog(appointment)">
+      Update
+    </button>
+    <button class="btn-delete" (click)="deleteAppointment(i)">Delete</button>
+    <div *ngIf="appointment.isEditing">
+      <input type="text" [(ngModel)]="appointment.title" />
+      <input type="text" [(ngModel)]="appointment.date" />
+      <button (click)="updateAppointment(i)">Save</button>
+    </div>
+  </li>
+</ul>
+
+<p>
+  So... I'm running out of time, but the whole project was turning out pretty
+  good, here's a screenshot of where I left off before finishing the functional
+  drag and drop part 😊
+</p>
+
+<img
+  src="Captura de tela 2023-06-05 114252.png"
+  alt="screenshot on the folder, take a look"
+/>
